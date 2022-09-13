@@ -332,7 +332,7 @@ elif page == '📜 Upload and convert':
     #tess_path = Path('/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata')
     #pytesseract.pytesseract.tesseract_cmd = r's3://saracapstone/tesseract/'
     #tessdata_dir_config = r'--tessdata-dir "/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata"'
-    tessdata_dir_config = r'--tessdata-dir "https://saracapstone.s3.amazonaws.com/tesseract/tessdata"'
+    tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
     
     lang1 = r'ara'
     lang2 = r'ara+ckbLayer+sarchia'
