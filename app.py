@@ -335,9 +335,13 @@ elif page == '📜 Upload and convert':
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
     
     
-    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata')
-    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata')
-    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata')
+    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata', aws_access_key_id=st.secrets['S3_KEY'],
+                      aws_secret_access_key=st.secrets['S3_SECRET'])
+    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata', aws_access_key_id=st.secrets['S3_KEY'],
+                      aws_secret_access_key=st.secrets['S3_SECRET'])
+    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata', aws_access_key_id=st.secrets['S3_KEY'],
+                      aws_secret_access_key=st.secrets['S3_SECRET'])
+    
     
     lang1 = arabic
     lang2 = arabic+ckblayer+sarchia
