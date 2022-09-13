@@ -334,9 +334,18 @@ elif page == '📜 Upload and convert':
     #tessdata_dir_config = r'--tessdata-dir "/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata"'
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
     
-    lang1 = r'ara'
-    lang2 = r'ara+ckbLayer+sarchia'
-    lang3 = r'ara+ckbLayer'
+    
+    arabic = s3.get_object(S3_BUCKET_NAME, tesseract/tessdata/ara.traineddata)
+    ckblayer = s3.get_object(S3_BUCKET_NAME, tesseract/tessdata/ckbLayer.traineddata)
+    sarchia = s3.get_object(S3_BUCKET_NAME, tesseract/tessdata/sarchia.traineddata)
+    
+    lang1 = arabic
+    lang2 = arabic+ckblayer+sarchia
+    lang3 = arabic+ckbLayer
+    
+    #lang1 = r'ara'
+    #lang2 = r'ara+ckbLayer+sarchia'
+    #lang3 = r'ara+ckbLayer'
 
     persian = st.checkbox('Persian')
     arabic = st.checkbox('Arabic')
