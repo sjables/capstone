@@ -21,7 +21,7 @@ import boto3
 from pathlib import Path
 
 
-S3_BUCKET_NAME = 'manuscriptrepository'
+S3_BUCKET_NAME = 'saracapstone'
 s3 = boto3.client('s3')
 
 def upload_to_aws(local_file, bucket, s3_file):
