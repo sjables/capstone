@@ -328,8 +328,8 @@ elif page == '📜 Upload and convert':
     st.header('Step 3: Convert!')
     st.write('**If your document contains more than one language, please check the box that applies:**')
 
-    home_dir = Path.home()
-    tess_path = Path('/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata')
+    #home_dir = Path.home()
+    #tess_path = Path('/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata')
 
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata/"'
     
