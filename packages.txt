@@ -1,4 +1,5 @@
 tesseract-ocr
+tesseract-ocr-ara
 libleptonica-dev
 libtesseract-dev
 python3-pil
