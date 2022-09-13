@@ -334,10 +334,14 @@ elif page == '📜 Upload and convert':
     #tessdata_dir_config = r'--tessdata-dir "/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata"'
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
     
-    s3 = boto3.client('s3')
-    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata', SSECustomerKey = st.secrets['S3_KEY'])
-    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata', SSECustomerKey = st.secrets['S3_KEY'])
-    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata', SSECustomerKey = st.secrets['S3_KEY'])
+    
+    s3 = boto3.resource('s3', aws_access_key_id=st.secrets['S3_KEY'], aws_secret_access_key=st.secrets['S3_SECRET'])
+    
+    
+    
+    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata')
+    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata')
+    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata')
     
     
     lang1 = arabic
