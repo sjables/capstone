@@ -338,11 +338,11 @@ elif page == '📜 Upload and convert':
     bucket = 'saracapstone'
     
     arabic = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/ara.traineddata')
-    arab = json.loads(arabic['Body'].read())
+    arab = json.loads(arabic['Body'].read().decode('utf-8'))
     ckblayer = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/ckbLayer.traineddata')
-    ckbl = json.loads(ckblayer['Body'].read())
+    ckbl = json.loads(ckblayer['Body'].read().decode('utf-8'))
     sarchia = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/sarchia.traineddata')
-    sarch = json.loads(sarchia['Body'].read())
+    sarch = json.loads(sarchia['Body'].read().decode('utf-8'))
     
     #lang1 = {**arabic}
     #lang2 = {**arabic, **sarchia, **ckblayer}
