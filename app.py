@@ -19,7 +19,7 @@ import boto3
 
 # Path stuff
 from pathlib import Path
-
+import json
 
 S3_BUCKET_NAME = 'saracapstone'
 s3 = boto3.client('s3')
