@@ -334,8 +334,8 @@ elif page == '📜 Upload and convert':
     #tessdata_dir_config = r'--tessdata-dir "/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata"'
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
     
-    
-    s3 = boto3.resource('s3', aws_access_key_id=st.secrets['S3_KEY'], aws_secret_access_key=st.secrets['S3_SECRET'])
+    s3 = boto3.client('s3', aws_access_key_id=st.secrets['S3_KEY'], aws_secret_access_key=st.secrets['S3_SECRET'])
+    #s3 = boto3.resource('s3', aws_access_key_id=st.secrets['S3_KEY'], aws_secret_access_key=st.secrets['S3_SECRET'])
     
     
     
