@@ -331,7 +331,7 @@ elif page == '📜 Upload and convert':
     home_dir = Path.home()
     tess_path = Path('/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata')
 
-    tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tessdata/"'
+    tessdata_dir_config = r'--tessdata-dir "https://saracapstone.s3.amazonaws.com/tessdata/"'
     
     lang1 = r'ara'
     lang2 = r'ara+ckbLayer+sarchia'
