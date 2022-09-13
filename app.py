@@ -405,7 +405,7 @@ elif page == "📂 Add to repository":
 
         if submitted_1:
             #textdoc = stringio.write('doc.txt')
-            uploaded = upload_to_aws('text.csv','manuscriptrepository', 'doc.csv')
+            uploaded = upload_to_aws('text.csv','saracapstone', 'doc.csv')
             st.success('Thank you for contributing to our e-repository!')
         else:
             st.write(' ')
