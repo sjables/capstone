@@ -333,9 +333,9 @@ elif page == '📜 Upload and convert':
 
     tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tessdata/"'
     
-    lang1 = r'l "s3://saracapstone/tessdata/ara.traineddata"'
-    lang2 = r'l "s3://saracapstone/tessdata/ara.traineddata"+"s3://saracapstone/tessdata/ckbLayer.traineddata"+"s3://saracapstone/tessdata/sarchia.traineddata"'
-    lang3 = r'l "s3://saracapstone/tessdata/ara.traineddata"+"s3://saracapstone/tessdata/ckbLayer.traineddata"'
+    lang1 = r'"s3://saracapstone/tessdata/ara.traineddata"'
+    lang2 = r'"s3://saracapstone/tessdata/ara.traineddata"+"s3://saracapstone/tessdata/ckbLayer.traineddata"+"s3://saracapstone/tessdata/sarchia.traineddata"'
+    lang3 = r'"s3://saracapstone/tessdata/ara.traineddata"+"s3://saracapstone/tessdata/ckbLayer.traineddata"'
 
     persian = st.checkbox('Persian')
     arabic = st.checkbox('Arabic')
