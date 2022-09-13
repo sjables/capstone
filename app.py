@@ -331,7 +331,7 @@ elif page == '📜 Upload and convert':
     #home_dir = Path.home()
     #tess_path = Path('/Users/sarajabbar/Desktop/trainingtesseract/tesseract/tessdata')
     #pytesseract.pytesseract.tesseract_cmd = r'https://saracapstone.s3.amazonaws.com/tesseract/tesseract.exe'
-    tessdata_dir_config = r'--tessdata-dir "s3://saracapstone/tesseract/tessdata"'
+    tessdata_dir_config = r'--tessdata-dir "https://saracapstone.s3.amazonaws.com/tesseract/tessdata"'
     
     lang1 = r'ara'
     lang2 = r'ara+ckbLayer+sarchia'
@@ -347,7 +347,7 @@ elif page == '📜 Upload and convert':
     else:
         lang = lang3 # default
 
-    ocr_result = pytesseract.image_to_string(selected_image, lang=lang, config = tessdata_dir_config)
+    ocr_result = pytesseract.image_to_string(selected_image, lang=lang, config=tessdata_dir_config)
     if st.button('View raw text'):
         st.write(ocr_result)
     st.download_button(label="Download data as a text file", data=ocr_result, file_name='converted.txt', mime='text')
