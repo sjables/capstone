@@ -337,19 +337,16 @@ elif page == '📜 Upload and convert':
     s3 = boto3.client('s3', aws_access_key_id=st.secrets['S3_KEY'], aws_secret_access_key=st.secrets['S3_SECRET'])
     bucket = 'saracapstone'
     
-    
-    
     arabic = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/ara.traineddata')
+    arab = json.loads(arabic['Body'].read())
     ckblayer = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/ckbLayer.traineddata')
+    ckbl = json.loads(ckblayer['Body'].read())
     sarchia = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/sarchia.traineddata')
+    sarch = json.loads(sarchia['Body'].read())
     
     #lang1 = {**arabic}
     #lang2 = {**arabic, **sarchia, **ckblayer}
     #lang3 = {**arabic, **ckblayer}
-    
-    arab = arabic.read()
-    ckbl = ckblayer.read()
-    sarch = sarchia.read()
     
     lang1 = arab
     lang2 = arab+ckbl+sarch
