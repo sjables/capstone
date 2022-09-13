@@ -339,9 +339,9 @@ elif page == '📜 Upload and convert':
     
     
     
-    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata')
-    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata')
-    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata')
+    arabic = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ara.traineddata').read()
+    ckblayer = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/ckbLayer.traineddata').read()
+    sarchia = s3.get_object(Bucket = S3_BUCKET_NAME, Key = 'tesseract/tessdata/sarchia.traineddata').read()
     
     
     lang1 = arabic
