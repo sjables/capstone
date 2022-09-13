@@ -343,10 +343,14 @@ elif page == '📜 Upload and convert':
     ckblayer = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/ckbLayer.traineddata')
     sarchia = s3.get_object(Bucket = 'saracapstone', Key = 'tesseract/tessdata/sarchia.traineddata')
     
+    lang1 = {**arabic}
+    lang2 = {**arabic, **sarchia, **ckblayer}
+    lang3 = {**arabic, **ckblayer}
     
-    lang1 = arabic
-    lang2 = arabic+ckblayer+sarchia
-    lang3 = arabic+ckbLayer
+    
+    #lang1 = arabic
+    #lang2 = arabic+ckblayer+sarchia
+    #lang3 = arabic+ckbLayer
     
     #lang1 = r'ara'
     #lang2 = r'ara+ckbLayer+sarchia'
