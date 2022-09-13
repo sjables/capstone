@@ -5,3 +5,4 @@ pillow
 streamlit
 pandas
 numpy
+s3fs==2022.8.2
